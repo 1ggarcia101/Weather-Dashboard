@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-  <section class="top-banner">
-    <div class="container">
-      <h1 class="heading">Simple Weather App</h1>
-      <form>
-        <input type="text" placeholder="Search for a city" autofocus>
-        <button type="submit">SUBMIT</button>
-        <span class="msg"></span>
-      </form>
-    </div>
-  </section>
-  <section class="ajax-section">
-    <div class="container">
-      <ul class="cities"></ul>
-    </div>
-  </section>
-  <li class="city">
-    <h2 class="city-name" data-name="...">
-      <span>...</span>
-      <sup>...</sup>
-    </h2>
-    <span class="city-temp">...<sup>°C</sup></span>
-    <figure>
-      <img class="city-icon" src="..." alt="...">
-      <figcaption>...</figcaption>
-    </figure>
-  </li>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Search your city to find your weather forecast.">
+    <!-- Google font family -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- My style sheets -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body class="flex-column min-100-vh">
+    <header class="hero">
+      <h1 class="app-title">
+        <!-- The `<i>` element is for icons. These classes come from the Font Awesome font icon library. -->
+          <i class="fa-solid fa-cloud-bolt"></i> Weather Dashboard
+      </h1>
+      <p class="site-description">Search for a city to see the weather forecast!
+      </p>
+    </header>
+  
+  
+    <main class="flex-row justify-space-between">
+      <div class="col-12 col-md-3">
+  
+        <div class="card">
+          <h3 class="card-header text-uppercase">Search for a City</h3>
+          <form id="city-form" class="card-body">
+            <label class="form-label" for="city">City</label>
+            <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn">Search</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3 class="card-header text-uppercase">Recent Searches</h3>
+          <div id="city-buttons-container" class="card-body">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-12 col-md-9">
+        <h2 class="subtitle">Showing Weather: <span id="city-search-term"></span></h2>
+        <div id="weather-container">
+        </div>
+      </div>
+    </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./assets/js/script.js"></script>
 </html>
